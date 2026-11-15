@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Old School Gym — Train with purpose</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@500;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0a;--surface:#151515;--ink:#f5f5f0;--muted:#a3a3a0;--line:#2a2a2a;--accent:#ffd400;--on-accent:#0a0a0a;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0b0b;--surface:#151515;--ink:#f2f2ee;--muted:#9a9a93;--line:#262626;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b0b0b;--surface:#151515;--ink:#f2f2ee;--muted:#9a9a93;--line:#262626;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;overflow-x:hidden}
+h1,h2,h3,.logo{font-family:Anton,Impact,"Arial Narrow",sans-serif;font-weight:400;letter-spacing:.01em;line-height:1}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:400;font-size:28px;letter-spacing:.04em}.logo i{font-style:normal;background:var(--accent);color:var(--on-accent);padding:0 6px;margin-left:2px}
+.links{display:flex;gap:28px;font-size:14px;font-weight:500;color:var(--muted)}
+.links a{position:relative;transition:color .3s}.links a:hover{color:var(--ink)}
+.links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--accent);transition:width .3s}.links a:hover::after{width:100%}
+.btn{display:inline-block;background:var(--accent);color:var(--on-accent);font-weight:600;font-size:14px;padding:13px 26px;border-radius:999px;transition:transform .3s,box-shadow .3s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 24px -8px var(--accent)}
+.btn.ghost{background:none;color:var(--ink);border:1px solid var(--line)}.btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
+.hero{padding:110px 0 80px;position:relative}
+.hero::before{content:"";position:absolute;right:-120px;top:20px;width:420px;height:420px;border-radius:50%;background:var(--accent);opacity:.18;filter:blur(70px);animation:float 9s ease-in-out infinite}
+@keyframes float{50%{transform:translate(-40px,40px) scale(1.1)}}
+.tag{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
+.tag::before{content:"";display:inline-block;width:28px;height:2px;background:var(--accent);vertical-align:middle;margin-right:12px}
+h1{font-size:clamp(60px,13vw,160px);font-weight:400;text-transform:uppercase}
+h1 .w{display:inline-block;overflow:hidden;vertical-align:top}
+h1 .w span{display:inline-block;transform:translateY(110%);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards}
+h1 .w:nth-child(2) span{animation-delay:.12s}h1 .w:nth-child(3) span{animation-delay:.24s}h1 .w:nth-child(4) span{animation-delay:.36s}
+@keyframes up{to{transform:none}}
+h1 em{font-style:normal;background:var(--accent);color:var(--on-accent);padding:0 .12em}
+.lead{max-width:480px;color:var(--muted);margin:28px 0 36px;font-size:18px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.marquee{border-block:1px solid var(--line);overflow:hidden;padding:18px 0;background:var(--surface)}
+.track{display:flex;gap:48px;width:max-content;animation:scroll 28s linear infinite;font-family:Anton,Impact,sans-serif;font-weight:400;font-size:28px;text-transform:uppercase;white-space:nowrap}
+.track span:nth-child(even){color:var(--accent);-webkit-text-stroke:0}
+@keyframes scroll{to{transform:translateX(-50%)}}
+section{padding:96px 0}
+h2{font-size:clamp(42px,7vw,84px);font-weight:400;text-transform:uppercase;margin-bottom:48px;max-width:760px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:24px}
+.stat b{font-family:Anton,Impact,sans-serif;font-size:68px;font-weight:400;display:block;line-height:1}
+.stat span{color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:32px;transition:transform .4s,border-color .4s}
+.card:hover{transform:translateY(-8px);border-color:var(--accent)}
+.card .n{font-family:Archivo,sans-serif;font-weight:900;color:var(--accent);font-size:15px;letter-spacing:.1em}
+.card h3{font-size:34px;margin:44px 0 10px;text-transform:uppercase}
+.card p{color:var(--muted);font-size:15px}
+.price{font-family:Anton,Impact,sans-serif;font-size:54px;font-weight:400;margin:14px 0 4px}.price small{font-size:15px;font-weight:500;color:var(--muted);font-family:Inter,sans-serif}
+.card ul{list-style:none;padding:0;margin:20px 0 28px;font-size:15px;color:var(--muted)}
+.card li{padding:9px 0;border-top:1px solid var(--line)}
+.card.pop{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}.card.pop li,.card.pop .price small{color:inherit;opacity:.7;border-color:rgba(128,128,128,.3)}
+.card.pop h3{margin:0}.card.pop .btn{width:100%;text-align:center;background:var(--on-accent);color:var(--accent)}
+.card.plan h3{margin:0}
+.contact{background:var(--accent);color:var(--on-accent);border-radius:28px;padding:64px 40px;text-align:center}
+.contact h2{margin:0 auto 20px;max-width:700px}
+.contact p{margin-bottom:28px}
+.contact .btn{background:var(--on-accent);color:var(--accent)}
+footer{padding:40px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.rv{opacity:0;transform:translateY(36px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (min-width:1500px){.wrap{max-width:1320px}}
+@media (max-width:900px){.hero::before{width:260px;height:260px;right:-80px}}
+@media (max-width:720px){nav .wrap{height:auto;flex-wrap:wrap;padding:10px 18px;gap:8px}.links{order:3;width:100%;justify-content:space-between;gap:10px;font-size:13px}.wrap{padding:0 18px}.hero{padding:60px 0 50px}section{padding:60px 0}.cta .btn{flex:1;text-align:center}.contact{padding:48px 22px}.lead{font-size:16px}footer .wrap{flex-direction:column;text-align:center}.panel{min-height:220px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,h1 .w span{opacity:1;transform:none}}
+.wm{position:fixed;right:16px;bottom:calc(env(safe-area-inset-bottom,0px) + 16px);z-index:30;display:flex;align-items:center;gap:8px;padding:9px 15px 9px 11px;border-radius:999px;background:#14183d;color:#fff;font:600 12px/1 Inter,system-ui,sans-serif;letter-spacing:.02em;opacity:.88;pointer-events:none;border:1px solid #7c4dff;box-shadow:0 8px 22px -8px rgba(0,0,0,.5);animation:wmIn .8s 1.2s both}
+.wm svg{width:14px;height:17.5px;fill:#9b7bff}.wm b{font-weight:600;color:#b9a2ff}
+@keyframes wmIn{from{opacity:0;transform:translateY(12px)}to{opacity:.88;transform:none}}
+@media (max-width:720px){.wm{right:10px;bottom:calc(env(safe-area-inset-bottom,0px) + 10px);font-size:11px;padding:7px 11px 7px 9px}}
+.hazard{height:14px;background:repeating-linear-gradient(135deg,var(--accent) 0 18px,#0a0a0a 18px 36px)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:720px){.split{grid-template-columns:1fr}}
+.panel{border:1px solid var(--line);border-radius:20px;padding:40px 32px;background:linear-gradient(135deg,var(--surface),#0a0a0a);min-height:260px;transition:border-color .4s,transform .4s}
+.panel:hover{border-color:var(--accent);transform:translateY(-6px)}
+.panel span{font-size:64px;display:block;margin-bottom:48px;line-height:1}
+.panel h3{font-size:40px;text-transform:uppercase;margin-bottom:10px}
+.panel p{color:var(--muted);max-width:360px}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="logo" href="#top">OLD <i>SCHOOL</i></a>
+<div class="links"><a href="#about">About</a><a href="#programs">Programs</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a></div>
+<a class="btn" href="#contact">Join now</a></div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+<span class="tag">Gym · Boxing · Snooker</span>
+<h1><span class="w"><span>Train</span></span> <span class="w"><span>with</span></span><br><span class="w"><span><em>purpose.</em></span></span></h1>
+<p class="lead">Gym, boxing ring and snooker lounge under one roof. Modern equipment, expert coaches and a community that pushes you further. No noise — just results.</p>
+<div class="cta"><a class="btn" href="#contact">Book a free trial</a><a class="btn ghost" href="#programs">Explore programs</a></div>
+</div></header>
+
+<div class="marquee"><div class="track"><span>Boxing</span><span>✦</span><span>Snooker</span><span>✦</span>
+<span>Strength</span><span>✦</span><span>Cardio</span><span>✦</span><span>Crossfit</span><span>✦</span><span>Yoga</span><span>✦</span><span>Personal training</span><span>✦</span><span>Boxing</span><span>✦</span><span>Snooker</span><span>✦</span>
+<span>Strength</span><span>✦</span><span>Cardio</span><span>✦</span><span>Crossfit</span><span>✦</span><span>Yoga</span><span>✦</span><span>Personal training</span><span>✦</span>
+</div></div>
+<div class="hazard"></div>
+
+<section id="about"><div class="wrap">
+<h2 class="rv">Built for people who show up.</h2>
+<div class="stats rv">
+<div class="stat"><b data-n="1200">0</b><span>Active members</span></div>
+<div class="stat"><b data-n="25">0</b><span>Certified trainers</span></div>
+<div class="stat"><b data-n="60">0</b><span>Classes every week</span></div>
+<div class="stat"><b data-n="12">0</b><span>Years of experience</span></div>
+</div></div></section>
+
+<section id="programs" style="padding-top:0"><div class="wrap">
+<h2 class="rv">Our programs</h2>
+<div class="grid">
+<div class="card rv"><span class="n">01</span><h3>Strength</h3><p>Free weights and guided lifting plans to build real, lasting muscle.</p></div>
+<div class="card rv"><span class="n">02</span><h3>Cardio &amp; HIIT</h3><p>High-energy sessions that burn fat and boost endurance.</p></div>
+<div class="card rv"><span class="n">03</span><h3>Personal training</h3><p>One-on-one coaching with a plan built around your goals.</p></div>
+<div class="card rv"><span class="n">04</span><h3>Boxing</h3><p>Bag work, pads and sparring with experienced coaches.</p></div>
+<div class="card rv"><span class="n">05</span><h3>Snooker</h3><p>Full-size tables to unwind and compete with friends.</p></div>
+<div class="card rv"><span class="n">06</span><h3>Crossfit &amp; Yoga</h3><p>Group classes for strength, mobility and recovery.</p></div>
+</div></div></section>
+
+<section id="club" style="padding-top:0"><div class="wrap"><h2 class="rv">Beyond the weights</h2><div class="split"><div class="panel rv"><span>🥊</span><h3>Boxing ring</h3><p>Full-size ring, heavy bags and coach-led sessions for beginners and fighters.</p></div><div class="panel rv"><span>🎱</span><h3>Snooker lounge</h3><p>Quality tables and a relaxed lounge. Play a frame after your workout.</p></div></div></div></section>
+
+<section id="pricing" style="padding-top:0"><div class="wrap">
+<h2 class="rv">Simple pricing</h2>
+<div class="grid">
+<div class="card plan rv"><h3>Basic</h3><div class="price">Rs 5,000<small> /month</small></div><ul><li>Gym floor access</li><li>Locker room</li><li>Open 6am – 11pm</li></ul><a class="btn ghost" href="#contact">Choose plan</a></div>
+<div class="card pop rv"><h3>Pro</h3><div class="price">Rs 8,000<small> /month</small></div><ul><li>Everything in Basic</li><li>All classes + boxing</li><li>Monthly body assessment</li></ul><a class="btn" href="#contact">Choose plan</a></div>
+<div class="card plan rv"><h3>Elite</h3><div class="price">Rs 15,000<small> /month</small></div><ul><li>Everything in Pro</li><li>Personal trainer</li><li>Diet planning</li><li>Free snooker hours</li></ul><a class="btn ghost" href="#contact">Choose plan</a></div>
+</div></div></section>
+
+<section id="contact" style="padding-top:0"><div class="wrap"><div class="contact rv">
+<h2>Your first session is on us.</h2>
+<p>Walk in, meet the team and see the space. No commitment.</p>
+<a class="btn" href="tel:+920000000000">Call +92 000 0000000</a>
+</div></div></section>
+
+<footer><div class="wrap"><span>© 2026 Old School Gym. All rights reserved.</span><span>Your address, City</span></div></footer>
+<div class="wm" aria-hidden="true"><svg viewBox="0 0 4 5"><rect x="0" y="0" width="1" height="5"/><rect x="1" y="0" width="2" height="1"/><rect x="3" y="1" width="1" height="1"/><rect x="1" y="2" width="2" height="1"/></svg><span>Built by <b>PixelCraft</b></span></div>
+
+<script>
+(function(){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll(".rv").forEach(function(el,i){el.style.transitionDelay=(i%3)*0.1+"s";io.observe(el)});
+var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;co.unobserve(e.target);
+var el=e.target,n=+el.dataset.n,t=0;(function s(){t+=1/60;var p=Math.min(t/1.4,1);el.textContent=Math.round(n*(1-Math.pow(1-p,3)))+(p>=1?"+":"");if(p<1)requestAnimationFrame(s)})()})},{threshold:.6});
+document.querySelectorAll("[data-n]").forEach(function(el){co.observe(el)});
+})();
+</script>
+</body>
+</html>
